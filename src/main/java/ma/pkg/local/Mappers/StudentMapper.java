@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class StudentMapper {
 
-     StudentDto convertEntityToDto(StudentEntity entity){
+      public StudentDto convertEntityToDto(StudentEntity entity){
        StudentDto  studentDto= new StudentDto();
        studentDto.setId(entity.getId());
        studentDto.setName(entity.getName());

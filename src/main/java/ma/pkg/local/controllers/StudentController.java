@@ -19,33 +19,33 @@ public class StudentController {
         this.service = service ;
     }
     @PostMapping ("/save")
-    public  Long create  (@RequestBody StudentDto dto){
-        LOGGER.debug("start");
-        Long result = service.create(dto);
+    public  StudentDto create  (@RequestBody StudentDto dto){
+        LOGGER.debug("start save dto : {}",dto);
+         StudentDto result = service.create(dto);
         LOGGER.debug("end");
         return result;
     }
     @PutMapping
-    public  boolean update (@RequestBody StudentDto dto){
-        LOGGER.debug("start");
-        boolean result = service.update(dto);
+    public  StudentDto update (@RequestBody StudentDto dto){
+        LOGGER.debug("start update dto : {}",dto);
+        StudentDto result = service.update(dto);
         LOGGER.debug("end");
         return result;
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public  boolean delete (@PathVariable("id")Long id){
-        LOGGER.debug("start");
+        LOGGER.debug("start delete id : "+ id);
         boolean result = service.delete(id);
         LOGGER.debug("end");
         return result;
 
     }
-    @GetMapping
+    @GetMapping("/read")
     public List<StudentDto> readAll(){
-        /* LOGGER.debug("start");
-        List<StudentDTo> aa=service.redAll();
+         LOGGER.debug("start");
+        List<StudentDto> aa=service.readAll();
         LOGGER.debug("end");
-        return aa;*/
-        return  service.readAll();
+        return aa;
+
     }
 }

@@ -6,8 +6,8 @@ import ma.pkg.local.Entities.StudentEntity;
 import java.util.List;
 
 public interface StudentServices {
-    Long create (StudentDto dto);
-    boolean update (StudentDto dto);
+    StudentDto create (StudentDto dto);
+    StudentDto update (StudentDto dto);
     boolean delete (long id );
     List<StudentDto> readAll();
 
